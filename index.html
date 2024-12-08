@@ -1,0 +1,114 @@
+<!--
+File name: index.html
+
+AP CSP Post Create Task Project: Mindmath
+Description: This program uses HTML, JS, and CSS to create a mental math game with various modes/difficulties, as well as a player stats section and an option to export player data.
+
+*Developer: Radhika Parkhi*
+
+Version: 2.0
+Last modified: 12/06/2024
+-->
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Mindmath</title>
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="icon" href="favicon.ico"/>
+   </head>
+   <body>
+      <!--OVERLAY-->
+      <div class="overlay" id="overlay">
+         <div class="overlay-content">
+            <!--desc-->
+            <p>With Mindmath, test yourself with questions of varying difficulty. Track your points, streaks, average speed & accuracy as you sharpen your mental math skills.</p>
+            <footer>Developed by Radhika Parkhi</footer>
+         </div>
+         <!--images-->
+         <img src="images/logo-outline.png">
+         <img src="images/logo.png">
+         <img src="images/welcome.png">
+      </div>
+
+      <!--logo & title-->
+      <img style="float:right;padding:5px" src="images/logo.png" width="100px" height="100px">
+      <img src="images/title.png" width="230px">
+      
+      <!--name field, go button, & message 1-->
+      <br> <input class="input" type="text" id="usernameField" placeholder="Enter your name">
+      <button class="button" id="goBtn">Go</button>
+      <p style="font-size:15px;font-weight:bold" id="msg1"></p>
+      
+      <!--difficulty range-->
+      <h4>Difficulty</h4>
+      <input class="input" type="range" id="upper" min="5" max="15" step="5" value="5" disabled></input>
+      <label for="difficulty" id="range"></label>
+
+      <!--MODE BUTTONS-->
+      <h4>Mode</h4>
+      <!--add-->
+      <input type="radio" name="mode" id="a" value="+" checked disabled>
+      <label for="add">Addition</label>
+      <!--sub-->
+      <input type="radio" name="mode" id="s" value="-" disabled>
+      <label for="sub">Subtraction</label>
+      <input type="radio" name="mode" id="m" value="*" disabled>
+      <!--mul-->
+      <label for="mul">Multiplication</label>
+      <!--div-->
+      <input type="radio" name="mode" id="m" value="/" disabled>
+      <label for="div">Division</label>
+
+      <!--play button, message 2, & icon-->
+      <button class="button" id="playBtn" disabled>Play</button>
+      <h3 style="color:black;" id="msg2"></h3>
+      <img style="float:right;margin-right:350px;margin-top:-70px" id="icon">
+
+      <!--guess, hint button, & message 3-->
+      <input class="input" type="text" id="answerField" disabled>
+      <button class="button" id="answerBtn" disabled>Answer</button>
+      <button class="button" id="hintBtn" disabled>?</button>
+      <p style="font-size:15px;font-weight:bold" id="msg3"></p>
+      
+      <!--br-->
+      <img src="images/squigglyline.png" width="95%">
+
+      <!--STATS-->
+      <h3 id="stats">Stats</h3>
+      <div style="line-height:30px;column-count:3;column-gap:10px">
+         <!--total points-->
+         <div class="tooltip">Total points:
+            <p style="display:inline" id="pointsDisplay">0</p>
+            <span class="tooltiptext">total # correct</span>
+         </div><br>
+         <!--streak-->
+         <div class="tooltip">Streak:
+            <p style="display:inline" id="streakDisplay">0</p>
+            <span class="tooltiptext"># correct in a row</span>
+         </div><br>
+         <!--avg speed-->
+         <div class="tooltip">Avg speed:
+            <p style="display:inline" id="speedDisplay">0</p>
+            <span class="tooltiptext">time / question</span>
+         </div><br>
+         <!--accuracy-->
+         <div class="tooltip">Accuracy:
+            <p style="display:inline" id="accuracyDisplay">0</p>
+            <span class="tooltiptext"># correct / total</span>
+         </div>
+      </div>
+
+      <!--date/time display-->
+      <p class="date" id="datetime"></p>
+
+      <!--startover button-->
+      <br><br>
+      <button class="button" id="startoverBtn">Start over</button>
+      <!--export data button-->
+      <button class="button" id="exportDataBtn">Export data</button>
+
+   
+      <script src="script.js"></script>
+   </body>
+</html>

@@ -1,0 +1,183 @@
+/*
+File name: styles.css
+
+AP CSP Post Create Task Project: Mindmath
+Description: This program uses HTML, JS, and CSS to create a mental math game with various modes/difficulties, as well as a player stats section and an option to export player data.
+
+*Developer: Radhika Parkhi*
+
+Version: 2.0
+Last modified: 12/06/2024
+*/
+
+body {
+  /*global styling*/
+  background-color: white;
+  color: #cc0357;
+  accent-color: #f0d548;
+  font-family:'Helvetica', Arial, sans-serif;
+  line-height: 22px;
+  margin: 15px;
+
+  /*BUTTON STYLING*/
+  /*basic*/
+  .button {
+      background-color: #f0d548;
+      color: #e7035c;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      padding: 5px 15px;
+      margin-left: 3px;
+      border-radius: 15%;
+      transition-duration: 0.1s;
+  }
+  /*hover*/
+  .button:enabled:hover {
+      background-color: white;
+      border: 2px solid #f0d548;
+      box-shadow: 0 5px 5px 0 #e7c303, 0 3px 5px 0 #e7c303;
+  }
+  /*disabled*/
+  .button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+  }
+
+  /*TEXT FIELD STYLING*/
+  /*normal*/
+  .input {
+    background-color: white;
+    border-color: #e7035c;
+    border-style: solid;
+    border-radius: 5px;
+  }
+  /*disabled*/
+  .input:disabled {
+    background-color: #f7c2d6;
+  }
+
+  /*DATE/TIME DISPLAY STYLING*/
+  .date {
+    color: #e7c303;
+    font-weight: bold;
+    text-align: right;
+    float: right;
+    padding-top: 30px;
+  }
+
+  /*TOOLTIPS*/
+  /*container*/
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  /*text*/
+  .tooltip .tooltiptext {
+    color: #f7c2d6;
+    background-color: #333333;
+    visibility: hidden;
+    width: 130px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 6px;
+    /*positioning*/
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -45px;
+    /*fade-in*/
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  /*arrow*/
+  .tooltip .tooltiptext::after {
+    border-color: #555 transparent transparent transparent;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+  }
+  /*mouseover*/
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /*OVERLAY*/
+  /*container*/
+  .overlay {
+    background-color: #262626;
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 80%;
+    z-index: 2;
+    cursor: pointer;
+  }
+  /*hide*/
+  .hidden {
+    display: none;
+  }
+  /*content*/
+  .overlay-content {
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  /*logo outline*/
+  .overlay img:first-of-type {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 500px;
+    height: 500px;
+  }
+  /*logo*/
+  .overlay img:nth-of-type(2) {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -200%);
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 100%;
+  }
+  /*welcome*/
+  .overlay img:last-of-type {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 330px;
+    height: 330px;
+  }
+  /*desc*/
+  .overlay p {
+    color: #f7c2d6 ;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 60px;
+  }
+  /*footer*/
+  .overlay footer {
+    font-size: 18px;
+    margin-top: 25px;
+  }
+}
